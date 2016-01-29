@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+#include <fstream>
+using namespace std;
+
+int main() {
+  int N;
+  int numTestCase;
+  vector<int> width;
+  ifstream in("input.txt");
+  in >> N;
+  in >> numTestCase;
+  return 0;
+}

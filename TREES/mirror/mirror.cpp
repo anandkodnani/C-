@@ -1,0 +1,78 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
+
+struct Node {
+  int val;
+  vector<Node *> child;
+};
+
+Node *newNode(int val) {
+  Node *node = new Node;
+  node->val =  val;
+  return node;
+}
+
+void printNodeLevelWise(Node *root) {
+  queue<Node *> Q;
+  Q.push(root);
+
+  while (!Q.empty()) {
+    Node *c = Q.front();
+    Q.pop();
+    for (auto ptr: c->child)
+      Q.push(ptr);
+    cout << "  " << c-> val;
+  }
+}
+
+void mirrorTree(Node *root) {
+  if (!root || root->child.size() == 0)
+    return;
+
+  if (root->child.size() == 1)
+    return mirrorTree(root->child[0]);
+
+  // Reverse the roots.
+  int i = 0, j = root->child.size() - 1;
+  while (i < j) {
+    swap(root->child[i], root->child[j]);
+    ++i;
+    --j;
+  }
+
+  for (auto ptr: root->child)
+    mirrorTree(ptr);
+}
+
+// Driver program
+int main()
+{
+  /*   Let us create below tree
+   *              10
+   *        /   /    \   \
+   *        2  34    56   100
+   *                 |   /  | \
+   *                 1   7  8  9
+   */
+  Node *root = newNode(10);
+  (root->child).push_back(newNode(2));
+  (root->child).push_back(newNode(34));
+  (root->child).push_back(newNode(56));
+  (root->child).push_back(newNode(100));
+  (root->child[2]->child).push_back(newNode(1));
+  (root->child[3]->child).push_back(newNode(7));
+  (root->child[3]->child).push_back(newNode(8));
+  (root->child[3]->child).push_back(newNode(9));
+ 
+  cout << "Level order traversal Before Mirroring\n";
+  printNodeLevelWise(root);
+ 
+  mirrorTree(root);
+ 
+  cout << "\nLevel order traversal After Mirroring\n";
+  printNodeLevelWise(root);
+ 
+  return 0;
+}

@@ -1,0 +1,11 @@
+class CX {
+private:
+  string Name;
+  float Weight;
+
+public:
+  bool operator== (CX &other);
+  CX operator+(CX &other);
+  bool operator> (CX &other); 
+  float GetWeight() {return Weight;}
+};

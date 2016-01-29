@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+  int val;
+  Node *left;
+  Node *right;
+  int height;
+};
+
+Node *newNode(int val) {
+  Node *node = new Node;
+  node->val = val;
+  node->left = nullptr;
+  node->right = nullptr;
+  node->height = 1;
+  return node;
+}
+
+Node *search(Node *root, int val) {
+  if (!root || root->val = val)
+    return root;
+
+  if (root->val > val) {
+    if (!root->left)
+      return nullptr;
+
+    // When you have a left.
+    if (root->left)
+  }
+}
+/* Drier program to test above function*/
+int main()
+{
+  Node *root = newNode(100);
+  root->left = newNode(50);
+  root->right = newNode(200);
+  root->left->left = newNode(40);
+  root->left->left->left = newNode(30);
+  root->left->left->left->left = newNode(20);
+ 
+  root = search(root, 20);
+  printf("Preorder traversal of the modified Splay tree is \n");
+  preOrder(root);
+  return 0;
+}

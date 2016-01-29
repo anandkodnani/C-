@@ -1,0 +1,11 @@
+int minOperations(char arr[][M], int time) {
+  if (i < 1 || i > N || j < 1 || j > M)
+    return 0;
+
+  
+  if (time > K)
+    return -1;
+
+  int val = -1;
+  
+}

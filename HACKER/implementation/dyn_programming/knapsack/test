@@ -1,0 +1,10 @@
+
+
+
+1. curr_max = 0;
+curr_max =  max(curr_max, arr[2])
+profit += curr_max - arr[2]
+
+2.
+ curr_max = max(1, 2)
+profit += 2 - 1

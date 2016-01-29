@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+
+struct Node {
+  char val;
+  int freq;
+  int code
+};
+
+Node * createNode(char val, int freq) {
+  Node *node = new Node;
+  node->val = val;
+  node->freq =  freq;
+  node->code = -1;
+  return node;
+  
+}
+
+int main() {
+
+  vector<Node *> nodeVector;
+  nodevector.push_back(createNode(a, 5));
+  nodevector.push_back(createNode(b, 9));
+  nodevector.push_back(createNode(c, 12));
+  nodevector.push_back(createNode(d, 13));
+  nodevector.push_back(createNode(e, 16));
+  nodevector.push_back(createNode(f, 45));
+}

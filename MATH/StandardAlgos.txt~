@@ -1,0 +1,2 @@
+# Multiply a number by 7.
+Solution: Left shift the number by 3 bits and subtract original number from it.

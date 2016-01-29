@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+#include <ctype.h>
+using namespace std;
+
+string newString;
+
+void snakeCase(char *str) {
+  if (str[0] == '\0')
+    return;
+
+  if (str[0] == ' ') {
+    newString += "_";
+    str++;
+  } else if (ispunct(str[0]))
+    str++;
+  else if (isnum(str[0])) {
+    newString += str[0];
+    str++;
+  } else if (!isalpha(str[0]))
+    str++;
+  else if (isalpha(str[0])) {
+    newString += toupper(str[0]);
+    str++;
+  }
+  snakeCase(str);
+}
+
+int main() {
+  snakeCase("abcd!$%123");
+  cout << newString;
+  return 0;
+}

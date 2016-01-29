@@ -1,0 +1,14 @@
+// Pg.1 question 3.
+#include <iostream>
+#include <string>
+#include <map>
+using namespace std;
+
+
+// Driver program
+int main()
+{
+  cout << areIsomorphic("aab", "xxy") << endl;
+  cout << areIsomorphic("aab", "xyz") << endl;
+  return 0;
+}

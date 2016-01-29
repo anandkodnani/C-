@@ -1,0 +1,8 @@
+
+
+double calcPhi(double tolerance, double val, int n) {
+
+  if ( < tolerance)
+    return val;
+  else
+}

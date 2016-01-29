@@ -1,0 +1,4 @@
+int main() {
+  string str = "( a(b) (c) (d(e(f)g)h) I (j(k)l)m)";
+  return 0;
+}

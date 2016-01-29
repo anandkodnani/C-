@@ -1,0 +1,21 @@
+def findPeak(arr, low, high, peak) :
+    mid = low + (high - low) // 2;
+
+    if mid == 0 :
+        if arr[mid] >= arr[mid + 1] :
+            peak.append(arr[mid])
+    elif mid == len(arr) :
+        if arr[mid] >= arr[mid - 1] :
+            peak.append(arr[mid])
+    elif arr[mid] >= arr[mid - 1] and arr[mid] >= arr[mid + 1] :
+        peak.append(arr[mid])
+    elif mid > 0 and arr[mid] < arr[mid - 1] :
+        findPeak(arr, low, mid - 1, peak)
+    else :
+        findPeak(arr, mid + 1, high, peak)
+    
+
+arr = [10, 20, 15, 2, 23, 90, 67]
+peak = []
+findPeak(arr, 0, len(arr), peak)
+print peak

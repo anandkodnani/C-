@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+  int val;
+  Node *next;
+};
+
+void insertNode(Node **head, int val) {
+  Node *node = new Node;
+  node->val = val;
+  node->next = nullptr;
+
+  if (!head)
+    *head = node;
+  else {
+    node->next = *head;
+    *head = node;
+  }
+}
+
+int main() {
+  Node *head = nullptr;
+  insertNode(&head, 1);
+  insertNode(&head, 2);
+  insertNode(&head, 3);
+  insertNode(&head, 4);
+  
+  Node *temp = head;
+  while (temp) {
+    cout << " " << temp->val;
+    temp = temp->next;
+  }
+  return 0;
+}

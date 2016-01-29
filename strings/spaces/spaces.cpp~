@@ -1,0 +1,19 @@
+/*
+  "ABCD"
+  1. n -  1 spaces can be inserted.
+
+  print    print
+  A        BCD
+           print   print
+           B       CD
+                   print print
+                   C     D
+
+*/
+
+
+int main() {
+  string str = "ABCD";
+  print(str);
+  return 0;
+}

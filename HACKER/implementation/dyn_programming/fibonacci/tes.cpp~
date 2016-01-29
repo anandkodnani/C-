@@ -1,0 +1,25 @@
+
+
+this.dim1 = other.dim1;
+
+this.setDim1(other.getDim1());
+
+float temp = other.getDim1();
+this.setDim1(temp);
+
+temp = other.getDim2();
+
+
+int temp = a;
+a = b;
+b = temp;
+
+
+
+
+int main() {
+
+  CRectangle S;
+  CRectangle V;
+  V = !S; // operator! (CRectangle);
+}

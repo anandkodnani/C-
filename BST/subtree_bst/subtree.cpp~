@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+/* Driver program to test above functions*/
+int main()
+{
+  /* Let us construct the following Tree
+          50
+       /      \
+     10        60
+    /  \       /  \
+   5   20    55    70
+            /     /  \
+          45     65    80
+  */
+ 
+  Node *root = newNode(50);
+  root->left        = newNode(10);
+  root->right       = newNode(60);
+  root->left->left  = newNode(5);
+  root->left->right = newNode(20);
+  root->right->left  = newNode(55);
+  root->right->left->left  = newNode(45);
+  root->right->right = newNode(70);
+  root->right->right->left = newNode(65);
+  root->right->right->right = newNode(80);
+ 
+  /* The complete tree is not BST as 45 is in right subtree of 50.
+     The following subtree is the largest BST
+        60
+      /  \
+    55    70
+   /     /  \
+ 45     65    80
+  */
+  printf(" Size of the largest BST is %d", largestBST(root));
+ 
+  getchar();
+  return 0;
+}

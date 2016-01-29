@@ -1,0 +1,13 @@
+
+class Complex {
+private:
+  float *num;
+
+public:
+
+  Complex(float real, float imag) {
+    num = new float[2];
+    num[0] = real;
+    num[1] = imag;
+  }
+};
